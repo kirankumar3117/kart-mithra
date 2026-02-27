@@ -6,6 +6,7 @@ import {
   useState,
   useCallback,
   ReactNode,
+  useEffect,
 } from "react";
 import { en, type Translations } from "./en";
 import { te } from "./te";
@@ -39,14 +40,74 @@ const LanguageContext = createContext<LanguageContextType>({
   t: en,
 });
 
+const TELUGU_STATES = ["Telangana", "Andhra Pradesh"];
+const HINDI_STATES = [
+  "Delhi",
+  "Uttar Pradesh",
+  "Bihar",
+  "Rajasthan",
+  "Madhya Pradesh",
+  "Haryana",
+  "Himachal Pradesh",
+  "Uttarakhand",
+  "Chhattisgarh",
+  "Jharkhand",
+];
+
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [locale, setLocaleState] = useState<Locale>("en");
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    // Check local storage first
+    const savedLocale = localStorage.getItem("kartmithra_locale") as Locale;
+    if (savedLocale && ["en", "te", "hi"].includes(savedLocale)) {
+      setLocaleState(savedLocale);
+      setIsLoaded(true);
+      return;
+    }
+
+    // Auto-detect based on location if no saved preference
+    const detectLocationAndLanguage = async () => {
+      try {
+        const res = await fetch("https://ipapi.co/json/");
+        const data = await res.json();
+        const region = data.region;
+
+        if (region) {
+          if (TELUGU_STATES.includes(region)) {
+            setLocaleState("te");
+          } else if (HINDI_STATES.includes(region)) {
+            setLocaleState("hi");
+          }
+        }
+      } catch (error) {
+        console.error("Failed to auto-detect location", error);
+        // Fallback to English is handled by initial state
+      } finally {
+        setIsLoaded(true);
+      }
+    };
+
+    detectLocationAndLanguage();
+  }, []);
 
   const setLocale = useCallback((newLocale: Locale) => {
     setLocaleState(newLocale);
+    localStorage.setItem("kartmithra_locale", newLocale);
   }, []);
 
   const t = dictionaries[locale];
+
+  // Prevent hydration mismatch by returning a bare shell until state resolves
+  // or handle normally since Next.js hydration allows simple wrapper
+  if (!isLoaded) {
+    return (
+      <LanguageContext.Provider value={{ locale: "en", setLocale, t: en }}>
+        <div style={{ visibility: "hidden" }}>{children}</div>
+      </LanguageContext.Provider>
+    );
+  }
 
   return (
     <LanguageContext.Provider value={{ locale, setLocale, t }}>
@@ -62,3 +123,4 @@ export function useLanguage() {
   }
   return context;
 }
+
