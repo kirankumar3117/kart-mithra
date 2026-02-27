@@ -19,7 +19,7 @@ export default function Navbar() {
   const navLinks = [
     { href: "/", label: t.nav.home },
     { href: "/customer", label: t.nav.customer },
-    { href: "/shopkeeper", label: t.nav.shopkeeper },
+    { href: "/merchant", label: t.nav.merchant },
   ];
 
   const locales: Locale[] = ["en", "te", "hi"];

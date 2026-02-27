@@ -118,8 +118,8 @@ export default function HomePage() {
               </motion.div>
             </Link>
 
-            {/* Shopkeeper Card */}
-            <Link href="/shopkeeper" className="group">
+            {/* Merchant Card */}
+            <Link href="/merchant" className="group">
               <motion.div
                 whileHover={{ y: -8, scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
@@ -133,13 +133,13 @@ export default function HomePage() {
                     </svg>
                   </div>
                   <h2 className="text-2xl font-bold text-white mb-3">
-                    {t.home.shopkeeperCardTitle}
+                    {t.home.merchantCardTitle}
                   </h2>
                   <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-                    {t.home.shopkeeperCardDesc}
+                    {t.home.merchantCardDesc}
                   </p>
                   <span className="inline-flex items-center gap-2 text-accent font-semibold text-sm group-hover:gap-3 transition-all duration-300">
-                    {t.home.shopkeeperCardCta}
+                    {t.home.merchantCardCta}
                     <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                     </svg>

@@ -8,7 +8,7 @@ Kart Mithra is a hyper-local pre-order and pickup platform built for the Indian 
 
 - **Digital Chitty & Pre-Orders**: Upload handwritten grocery lists, let AI build the cart, and schedule pickups.
 - **Zero Waiting Time**: Customers order ahead and simply walk in to collect.
-- **Shopkeeper Dashboard**: 60-second frictionless onboarding (📱 + PIN). Live ping notifications for orders, and effortless stock management.
+- **Merchant Dashboard**: 60-second frictionless onboarding (📱 + PIN). Live ping notifications for orders, and effortless stock management.
 - **Multilingual Native (i18n)**: Built-in, lightweight auto-detecting language support for **English**, **Telugu**, and **Hindi** based on user IP geography.
 
 ---

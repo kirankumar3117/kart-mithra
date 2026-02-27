@@ -3,7 +3,7 @@ export const en = {
   nav: {
     home: "Home",
     customer: "Customer",
-    shopkeeper: "Shopkeeper",
+    merchant: "Merchant",
   },
 
   // Status Badge
@@ -23,15 +23,15 @@ export const en = {
       "Skip the line. Upload your chitty and pre-order from your favorite neighborhood shop.",
     customerCardCta: "Explore",
 
-    shopkeeperCardTitle: "I am a Shopkeeper",
-    shopkeeperCardDesc:
+    merchantCardTitle: "I am a Merchant",
+    merchantCardDesc:
       "Take your Kirana store online in 60 seconds. Get orders, manage stock, grow your business.",
-    shopkeeperCardCta: "Explore",
+    merchantCardCta: "Explore",
 
     problemsHeading1: "The Problems ",
     problemsHeadingHighlight: "We Solve",
     problemsSubtext:
-      "Every day, millions of Indians waste time in queues, forget items from their grocery lists, and shopkeepers struggle with manual stock tracking. We're fixing all three.",
+      "Every day, millions of Indians waste time in queues, forget items from their grocery lists, and merchants struggle with manual stock tracking. We're fixing all three.",
 
     feature1Title: "Zero Waiting Time",
     feature1Problem: "Tired of standing in long queues?",
@@ -44,7 +44,7 @@ export const en = {
       "We remember every chitty you've ever made. Our AI learns your habits and suggests what you might have missed.",
 
     feature3Title: "Effortless Inventory",
-    feature3Problem: "Shopkeepers drowning in manual stock tracking?",
+    feature3Problem: "Merchants drowning in manual stock tracking?",
     feature3Solution:
       "A dead-simple dashboard to track stock, manage inventory, and update prices on the fly — no tech skills needed.",
   },
@@ -81,9 +81,9 @@ export const en = {
     ctaButton: "Join the Customer Waitlist",
   },
 
-  // Shopkeeper Page
-  shopkeeper: {
-    badge: "For Shopkeepers",
+  // Merchant Page
+  merchant: {
+    badge: "For Merchants",
     heroHeadline1: "Take Your Kirana Store ",
     heroHeadlineHighlight: "Online in 60 Seconds.",
     heroSubtext:
@@ -108,7 +108,7 @@ export const en = {
 
     ctaHeading: "Ready to Grow Your Business?",
     ctaSubtext:
-      "Join hundreds of shopkeepers who are modernizing their Kirana stores. No fees to start — just sign up and go.",
+      "Join hundreds of merchants who are modernizing their Kirana stores. No fees to start — just sign up and go.",
     ctaButton: "Join the Merchant Waitlist",
   },
 
@@ -119,7 +119,7 @@ export const en = {
     quickLinks: "Quick Links",
     linkHome: "Home",
     linkCustomers: "For Customers",
-    linkShopkeepers: "For Shopkeepers",
+    linkMerchants: "For Merchants",
     getInTouch: "Get in Touch",
     contactText: "Building for India's neighborhoods.",
     contactCta: "Drop us a line at ",
