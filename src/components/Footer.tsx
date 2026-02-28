@@ -1,10 +1,14 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useLanguage } from "@/i18n/LanguageProvider";
 
 export default function Footer() {
   const { t } = useLanguage();
+  const pathname = usePathname();
+
+  if (pathname?.startsWith("/agent")) return null;
 
   return (
     <footer className="border-t border-surface-border bg-surface-card/50">

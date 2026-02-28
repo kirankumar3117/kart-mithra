@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   useLanguage,
@@ -15,6 +16,9 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
   const { locale, setLocale, t } = useLanguage();
+  const pathname = usePathname();
+
+  if (pathname?.startsWith("/agent")) return null;
 
   const navLinks = [
     { href: "/", label: t.nav.home },

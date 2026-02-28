@@ -1,12 +1,51 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import FeatureCard from "@/components/FeatureCard";
 import CTAButton from "@/components/CTAButton";
 import { useLanguage } from "@/i18n/LanguageProvider";
+import { Store, User, Phone, X, CheckCircle2, Loader2, ChevronDown } from "lucide-react";
 
 export default function MerchantPage() {
   const { t } = useLanguage();
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const [formState, setFormState] = useState<"idle" | "loading" | "success">("idle");
+  const [merchantName, setMerchantName] = useState("");
+  const [shopType, setShopType] = useState("");
+  const [phone, setPhone] = useState("");
+  const [errorMsg, setErrorMsg] = useState("");
+
+  const shopTypes = ["Groceries", "Juice Shop", "Biryani Shop", "Electrical Shop", "Other"];
+
+  const handleOpenWaitlist = () => {
+    setIsDrawerOpen(true);
+    setFormState("idle");
+    setMerchantName("");
+    setShopType("");
+    setPhone("");
+    setErrorMsg("");
+  };
+
+  const handleCloseWaitlist = () => {
+    setIsDrawerOpen(false);
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!merchantName || !shopType || !phone) {
+      setErrorMsg("Please fill in all fields.");
+      return;
+    }
+    
+    setErrorMsg("");
+    setFormState("loading");
+
+    // Mock API simulation
+    setTimeout(() => {
+      setFormState("success");
+    }, 1500);
+  };
 
   const features = [
     {
@@ -149,10 +188,152 @@ export default function MerchantPage() {
             <p className="text-muted-foreground mb-8 leading-relaxed">
               {t.merchant.ctaSubtext}
             </p>
-            <CTAButton label={t.merchant.ctaButton} variant="accent" />
+            <CTAButton label={t.merchant.ctaButton} variant="accent" onClick={handleOpenWaitlist} />
           </motion.div>
         </div>
       </section>
+
+      {/* Waitlist Drawer */}
+      <AnimatePresence>
+        {isDrawerOpen && (
+          <>
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={handleCloseWaitlist}
+              className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50"
+            />
+            
+            {/* Drawer */}
+            <motion.div
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ type: "spring", damping: 25, stiffness: 200 }}
+              className="fixed top-0 right-0 bottom-0 w-full max-w-md bg-white shadow-2xl z-50 overflow-y-auto"
+            >
+              <div className="p-6">
+                <div className="flex items-center justify-between mb-8">
+                  <h2 className="text-2xl font-bold text-gray-900 tracking-tight">Join Waitlist</h2>
+                  <button 
+                    onClick={handleCloseWaitlist}
+                    className="p-2 text-gray-500 hover:text-gray-700 bg-gray-100 hover:bg-gray-200 rounded-full transition-colors"
+                  >
+                    <X className="w-5 h-5" />
+                  </button>
+                </div>
+
+                {formState === "success" ? (
+                  <div className="flex flex-col items-center justify-center py-12 text-center animate-in fade-in slide-in-from-bottom-4">
+                    <div className="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mb-6">
+                      <CheckCircle2 className="w-10 h-10" />
+                    </div>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-2">Success!</h3>
+                    <p className="text-gray-600 max-w-xs leading-relaxed">
+                      Thank you for your interest, {merchantName}! An agent will visit your shop soon to complete the onboarding process.
+                    </p>
+                    <button 
+                      onClick={handleCloseWaitlist}
+                      className="mt-8 px-6 py-3 bg-gray-100 text-gray-800 font-semibold rounded-xl hover:bg-gray-200 transition-colors w-full"
+                    >
+                      Done
+                    </button>
+                  </div>
+                ) : (
+                  <form onSubmit={handleSubmit} className="space-y-5">
+                    {errorMsg && (
+                      <div className="bg-red-50 text-red-600 p-4 rounded-xl text-sm font-medium border border-red-100">
+                        {errorMsg}
+                      </div>
+                    )}
+                    
+                    <div>
+                      <label className="block text-sm font-semibold text-gray-700 mb-1.5 ml-0.5">Your Name</label>
+                      <div className="relative">
+                        <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                          <User className="h-5 w-5 text-gray-400" />
+                        </div>
+                        <input
+                          type="text"
+                          value={merchantName}
+                          onChange={(e) => setMerchantName(e.target.value)}
+                          className="block w-full pl-11 pr-4 py-3.5 bg-gray-50 border border-gray-200 rounded-2xl focus:bg-white focus:ring-2 focus:ring-accent focus:border-accent transition-colors text-gray-900 outline-none"
+                          placeholder="e.g. Ramesh Kumar"
+                          disabled={formState === "loading"}
+                        />
+                      </div>
+                    </div>
+
+                    <div>
+                      <label className="block text-sm font-semibold text-gray-700 mb-1.5 ml-0.5">Type of Shop</label>
+                      <div className="relative">
+                        <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                          <Store className="h-5 w-5 text-gray-400" />
+                        </div>
+                        <select
+                          value={shopType}
+                          onChange={(e) => setShopType(e.target.value)}
+                          className="block w-full pl-11 pr-10 py-3.5 bg-gray-50 border border-gray-200 rounded-2xl focus:bg-white focus:ring-2 focus:ring-accent focus:border-accent transition-colors text-gray-900 outline-none appearance-none"
+                          disabled={formState === "loading"}
+                        >
+                          <option value="" disabled>Select shop type</option>
+                          {shopTypes.map((type) => (
+                            <option key={type} value={type}>{type}</option>
+                          ))}
+                        </select>
+                        <div className="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none">
+                          <ChevronDown className="h-5 w-5 text-gray-400" />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div>
+                      <label className="block text-sm font-semibold text-gray-700 mb-1.5 ml-0.5">Mobile Number</label>
+                      <div className="relative">
+                        <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                          <Phone className="h-5 w-5 text-gray-400" />
+                        </div>
+                        <input
+                          type="tel"
+                          value={phone}
+                          onChange={(e) => setPhone(e.target.value)}
+                          className="block w-full pl-11 pr-4 py-3.5 bg-gray-50 border border-gray-200 rounded-2xl focus:bg-white focus:ring-2 focus:ring-accent focus:border-accent transition-colors text-gray-900 outline-none"
+                          placeholder="10-digit mobile number"
+                          maxLength={10}
+                          disabled={formState === "loading"}
+                        />
+                      </div>
+                    </div>
+
+                    <div className="pt-4">
+                      <button
+                        type="submit"
+                        disabled={formState === "loading"}
+                        className="w-full bg-accent text-white py-4 px-6 rounded-2xl font-bold text-lg flex items-center justify-center hover:bg-accent-dark transition-colors shadow-lg shadow-accent/20 disabled:opacity-75 relative overflow-hidden group"
+                      >
+                        {formState === "loading" ? (
+                          <>
+                            <Loader2 className="w-5 h-5 mr-2 animate-spin" />
+                            Submitting...
+                          </>
+                        ) : (
+                          "Submit Request"
+                        )}
+                        <div className="absolute inset-0 h-full w-full bg-white/20 scale-x-0 group-hover:scale-x-100 transform origin-left transition-transform duration-300 ease-out" />
+                      </button>
+                      <p className="text-center text-xs text-gray-500 mt-4 leading-relaxed px-2">
+                        By submitting, you agree to allow an agent to visit your shop using the provided information.
+                      </p>
+                    </div>
+                  </form>
+                )}
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
