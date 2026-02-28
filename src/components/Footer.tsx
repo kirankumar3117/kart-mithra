@@ -39,6 +39,7 @@ export default function Footer() {
                 { href: "/", label: t.footer.linkHome },
                 { href: "/customer", label: t.footer.linkCustomers },
                 { href: "/merchant", label: t.footer.linkMerchants },
+                { href: "/agent/login", label: t.footer.linkAgents },
               ].map((link) => (
                 <li key={link.href}>
                   <Link

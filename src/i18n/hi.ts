@@ -6,6 +6,7 @@ export const hi: Translations = {
     home: "होम",
     customer: "ग्राहक",
     merchant: "व्यापारी",
+    agent: "एजेंट पोर्टल",
   },
 
   // Status Badge
@@ -122,6 +123,7 @@ export const hi: Translations = {
     linkHome: "होम",
     linkCustomers: "ग्राहकों के लिए",
     linkMerchants: "व्यापारियों के लिए",
+    linkAgents: "एजेंटों के लिए",
     getInTouch: "संपर्क करें",
     contactText: "भारत के पड़ोस के लिए बना रहे हैं।",
     contactCta: "हमें मेल करें ",

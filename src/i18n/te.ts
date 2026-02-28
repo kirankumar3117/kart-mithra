@@ -6,6 +6,7 @@ export const te: Translations = {
     home: "హోమ్",
     customer: "కస్టమర్",
     merchant: "వ్యాపారి",
+    agent: "ఏజెంట్ పోర్టల్",
   },
 
   // Status Badge
@@ -122,6 +123,7 @@ export const te: Translations = {
     linkHome: "హోమ్",
     linkCustomers: "కస్టమర్ల కోసం",
     linkMerchants: "వ్యాపారుల కోసం",
+    linkAgents: "ఏజెంట్ల కోసం",
     getInTouch: "సంప్రదించండి",
     contactText: "భారతదేశపు ఇరుగుపొరుగు కోసం నిర్మిస్తున్నాం.",
     contactCta: "మాకు మెయిల్ పంపండి ",

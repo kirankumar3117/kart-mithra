@@ -4,6 +4,7 @@ export const en = {
     home: "Home",
     customer: "Customer",
     merchant: "Merchant",
+    agent: "Agent Portal",
   },
 
   // Status Badge
@@ -120,6 +121,7 @@ export const en = {
     linkHome: "Home",
     linkCustomers: "For Customers",
     linkMerchants: "For Merchants",
+    linkAgents: "For Agents",
     getInTouch: "Get in Touch",
     contactText: "Building for India's neighborhoods.",
     contactCta: "Drop us a line at ",

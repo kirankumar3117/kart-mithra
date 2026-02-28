@@ -24,6 +24,7 @@ export default function Navbar() {
     { href: "/", label: t.nav.home },
     { href: "/customer", label: t.nav.customer },
     { href: "/merchant", label: t.nav.merchant },
+    { href: "/agent/login", label: t.nav.agent },
   ];
 
   const locales: Locale[] = ["en", "te", "hi"];
