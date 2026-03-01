@@ -123,7 +123,9 @@ export const en = {
     heroHeadline2: " in Local Commerce.",
     heroSubtext: "We are building the digital bridge between neighborhood shops and modern convenience — from pre-booked pickup to hyperlocal delivery. ",
     heroSubtextBold: "Zero waiting. Zero friction.",
-    heroMuted: "Starting with Kirana, Juice, and Fast-Food shops — expanding toward decentralized local delivery.",
+    heroMutedStart: "Starting with ",
+    heroMutedHighlight: "Kirana, Juice, and Fast-Food shops",
+    heroMutedEnd: " — expanding toward decentralized local delivery.",
     
     problemHeadline1: "The Problem: ",
     problemHeadlineHighlight: "Time is Wasted in Lines.",
@@ -143,6 +145,14 @@ export const en = {
     step3Desc: "The shopkeeper packs the order. The customer walks in, picks it up, and walks out.",
     step4Title: "4. Deliver (Optional)",
     step4Desc: "If enabled by the shop, orders can be delivered locally by the shop's own staff or network.",
+    
+    animCustomerApp: "Customer App",
+    animOrderPlaced: "Sending Order...",
+    animMerchantApp: "Merchant Dashboard",
+    animNewOrder: "New Order Received!",
+    animAccepting: "Accepting & Packing...",
+    animReady: "Ready for Pickup!",
+    animZeroWait: "Result: Zero Wait Time",
     
     flowPickup: "Pickup Path:",
     flowPickupPath: "Upload → AI Reads → Pack → Customer Walk-In Pickup",
