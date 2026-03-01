@@ -5,6 +5,7 @@ export const en = {
     customer: "Customer",
     merchant: "Merchant",
     agent: "Agent Portal",
+    vision: "Vision",
   },
 
   // Status Badge
@@ -18,6 +19,7 @@ export const en = {
     heroSubtext:
       "Kart Mithra connects you to your neighborhood shops for seamless pre-ordering and pickup. ",
     heroSubtextBold: "No more waiting in line.",
+    readVision: "Read the Vision",
 
     customerCardTitle: "I am a Customer",
     customerCardDesc:
@@ -111,6 +113,48 @@ export const en = {
     ctaSubtext:
       "Join hundreds of merchants who are modernizing their Kirana stores. No fees to start — just sign up and go.",
     ctaButton: "Join the Merchant Waitlist",
+  },
+
+  // Vision Page
+  vision: {
+    badge: "Project Manifesto",
+    heroHeadline1: "Kart Mithra: ",
+    heroHeadlineHighlight: "Eradicating the Queue",
+    heroHeadline2: " in Local Commerce.",
+    heroSubtext: "We are building the digital bridge between neighborhood shops and modern convenience. ",
+    heroSubtextBold: "Zero waiting. Zero friction.",
+    
+    problemHeadline1: "The Problem: ",
+    problemHeadlineHighlight: "Time is Wasted in Lines.",
+    problemDesc1: "Local Kirana and juice shops are the backbone of our neighborhoods, but the buying experience is broken. Customers waste ",
+    problemDescHighlight: "15-20 minutes",
+    problemDesc2: " standing in line during peak hours. Shopkeepers lose orders to chaotic WhatsApp messages and phone calls.",
+    problemConclusion: "We are fixing this single, massive point of friction.",
+    
+    solutionHeading: "The Solution Flow",
+    solutionSubtext: "How we remove friction from the transaction.",
+    step1Title: "1. Upload & Order",
+    step1Desc: "Customer uploads a handwritten 'Chitty' or selects items from the live menu.",
+    step2Title: "2. AI Processing",
+    step2Desc: "Our engine reads the list, builds the cart, and pings the shopkeeper instantly.",
+    step3Title: "3. Pack & Pickup",
+    step3Desc: "The shopkeeper packs the order. The customer walks in, picks it up, and walks out.",
+    
+    engineHeading: "The Engine",
+    engineSubtext: "The technologies powering the Kart Mithra platform.",
+    tech1Title: "Next.js",
+    tech1Desc: "Web Portal & Frontend Architecture",
+    tech2Title: "React Native",
+    tech2Desc: "Cross-Platform Mobile Apps",
+    tech3Title: "FastAPI & Python",
+    tech3Desc: "High-Performance Backend Server",
+    tech4Title: "PostgreSQL",
+    tech4Desc: "Spatial Data & Core Relational DB",
+    tech5Title: "Tesseract AI",
+    tech5Desc: "Chitty OCR & Image Processing",
+    
+    builderHeading: "Behind the Code",
+    builderDesc: "Kart Mithra is being actively developed by Kiran, a software engineer passionate about building scalable, hyper-local solutions.",
   },
 
   // Footer

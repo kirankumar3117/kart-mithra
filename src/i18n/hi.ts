@@ -7,6 +7,7 @@ export const hi: Translations = {
     customer: "ग्राहक",
     merchant: "व्यापारी",
     agent: "एजेंट पोर्टल",
+    vision: "विज़न",
   },
 
   // Status Badge
@@ -20,6 +21,7 @@ export const hi: Translations = {
     heroSubtext:
       "कार्ट मित्र आपको आपके पड़ोस की दुकानों से जोड़ता है — आसान प्री-ऑर्डर और पिकअप के लिए। ",
     heroSubtextBold: "अब लाइन में खड़े होने की ज़रूरत नहीं।",
+    readVision: "विज़न पढ़ें",
 
     customerCardTitle: "मैं ग्राहक हूँ",
     customerCardDesc:
@@ -113,6 +115,48 @@ export const hi: Translations = {
     ctaSubtext:
       "उन सैकड़ों व्यापारियों से जुड़ें जो अपनी किराना दुकानों को आधुनिक बना रहे हैं। शुरू करने में कोई फीस नहीं — बस साइन अप करें।",
     ctaButton: "मर्चेंट वेटलिस्ट जॉइन करें",
+  },
+
+  // Vision Page
+  vision: {
+    badge: "प्रोजेक्ट मेनिफेस्टो",
+    heroHeadline1: "कार्ट मित्र: ",
+    heroHeadlineHighlight: "कतारें ख़त्म करना",
+    heroHeadline2: " लोकल कॉमर्स में।",
+    heroSubtext: "हम पड़ोस की दुकानों और आधुनिक सुविधा के बीच डिजिटल पुल बना रहे हैं। ",
+    heroSubtextBold: "ज़ीरो वेटिंग। ज़ीरो घर्षण।",
+    
+    problemHeadline1: "समस्या: ",
+    problemHeadlineHighlight: "लाइनों में समय बर्बाद होता है।",
+    problemDesc1: "लोकल किराना और जूस की दुकानें हमारे पड़ोस की रीढ़ हैं, लेकिन खरीदारी का अनुभव टूट चुका है। ग्राहक पीक ऑवर्स में लाइन में खड़े होकर ",
+    problemDescHighlight: "15-20 मिनट",
+    problemDesc2: " बर्बाद करते हैं। अव्यवस्थित WhatsApp संदेशों और फोन कॉल्स के कारण व्यापारी ऑर्डर खो देते हैं।",
+    problemConclusion: "हम इस एक, बड़े घर्षण बिंदु को ठीक कर रहे हैं।",
+    
+    solutionHeading: "समाधान कैसे काम करता है",
+    solutionSubtext: "हम लेन-देन से घर्षण कैसे हटाते हैं।",
+    step1Title: "1. अपलोड और ऑर्डर करें",
+    step1Desc: "ग्राहक हाथ से लिखी 'चिट्ठी' अपलोड करता है या लाइव मेनू से आइटम चुनता है।",
+    step2Title: "2. AI प्रोसेसिंग",
+    step2Desc: "हमारा इंजन सूची पढ़ता है, कार्ट बनाता है और तुरंत व्यापारी को पिंग करता है।",
+    step3Title: "3. पैक और पिकअप",
+    step3Desc: "व्यापारी ऑर्डर पैक करता है। ग्राहक अंदर आता है, इसे उठाता है और बाहर चला जाता है।",
+    
+    engineHeading: "द इंजन",
+    engineSubtext: "कार्ट मित्र प्लेटफ़ॉर्म को शक्ति देने वाली प्रौद्योगिकियां।",
+    tech1Title: "Next.js",
+    tech1Desc: "वेब पोर्टल और फ़्रंटएंड आर्किटेक्चर",
+    tech2Title: "React Native",
+    tech2Desc: "क्रॉस-प्लेटफ़ॉर्म मोबाइल ऐप्स",
+    tech3Title: "FastAPI & Python",
+    tech3Desc: "हाई-परफॉरमेंस बैकएंड सर्वर",
+    tech4Title: "PostgreSQL",
+    tech4Desc: "स्थानिक डेटा और कोर रिलेशनल DB",
+    tech5Title: "Tesseract AI",
+    tech5Desc: "चिट्ठी OCR और इमेज प्रोसेसिंग",
+    
+    builderHeading: "कोड के पीछे",
+    builderDesc: "कार्ट मित्र को किरन द्वारा सक्रिय रूप से विकसित किया जा रहा है, जो स्केलेबल, हाइपर-लोकल समाधान बनाने के प्रति उत्साही सॉफ्टवेयर इंजीनियर है।",
   },
 
   // Footer

@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Zap, BrainCircuit, Boxes } from "lucide-react";
+import { Zap, BrainCircuit, Boxes, Lightbulb } from "lucide-react";
 import StatusBadge from "@/components/StatusBadge";
 import { useLanguage } from "@/i18n/LanguageProvider";
 
@@ -46,8 +46,19 @@ export default function HomePage() {
 
         <div className="max-w-5xl mx-auto text-center relative z-10">
           {/* Status Badge */}
-          <div className="mb-8 flex justify-center">
+          <div className="mb-8 flex flex-col items-center gap-4">
             <StatusBadge />
+            <Link href="/vision">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="group relative inline-flex items-center gap-2 rounded-full border border-surface-border bg-surface-card/40 px-5 py-2 text-sm font-medium text-muted transition-colors hover:bg-surface-card hover:text-white"
+              >
+                <span className="absolute inset-0 rounded-full bg-brand/10 opacity-0 transition-opacity group-hover:opacity-100 group-hover:animate-pulse"></span>
+                <Lightbulb className="w-4 h-4 text-brand" />
+                <span>{t.home.readVision}</span>
+              </motion.button>
+            </Link>
           </div>
 
           {/* Headline */}
