@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 import { useLanguage } from "@/i18n/LanguageProvider";
 
 export default function Footer() {
@@ -16,9 +17,9 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-brand to-accent flex items-center justify-center font-bold text-surface text-sm">
-                K
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-10 h-10 rounded-full overflow-hidden flex items-center justify-center relative bg-brand/5 border border-brand/20 block">
+                <Image src="/logo.png" alt="Kart Mithra Logo" fill className="object-contain p-1" />
               </div>
               <span className="text-lg font-bold text-white tracking-tight">
                 Kart<span className="text-brand">Mithra</span>

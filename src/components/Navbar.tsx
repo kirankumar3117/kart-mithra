@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   useLanguage,
@@ -35,8 +36,8 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group">
-            <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-brand to-accent flex items-center justify-center font-bold text-surface text-lg transition-transform group-hover:scale-110">
-              K
+            <div className="w-12 h-12 rounded-full overflow-hidden flex items-center justify-center transition-transform group-hover:scale-110 relative bg-brand/5 border border-brand/20">
+              <Image src="/logo.png" alt="Kart Mithra Logo" fill className="object-contain p-1" />
             </div>
             <span className="text-xl font-bold text-white tracking-tight">
               Kart<span className="text-brand">Mithra</span>
