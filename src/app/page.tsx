@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Zap, BrainCircuit, Boxes, Lightbulb } from "lucide-react";
 import StatusBadge from "@/components/StatusBadge";
 import { useLanguage } from "@/i18n/LanguageProvider";
+import AnimatedWireframe from "@/components/AnimatedWireframe";
 
 export default function HomePage() {
   const { t } = useLanguage();
@@ -162,8 +163,11 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* The Experience Wireframe */}
+      <AnimatedWireframe />
+
       {/* The Problems We Solve */}
-      <section className="pb-24 sm:pb-32 px-4">
+      <section className="pb-24 sm:pb-32 px-4 mt-10">
         <div className="max-w-5xl mx-auto text-center">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}

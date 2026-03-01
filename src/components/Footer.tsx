@@ -64,10 +64,10 @@ export default function Footer() {
               <br />
               {t.footer.contactCta}
               <a
-                href="mailto:hello@kartmithra.com"
+                href="mailto:kartmithra@gmail.com"
                 className="text-brand hover:underline"
               >
-                hello@kartmithra.com
+                kartmithra@gmail.com
               </a>
             </p>
           </div>
