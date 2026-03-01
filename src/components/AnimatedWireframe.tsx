@@ -28,7 +28,7 @@ export default function AnimatedWireframe() {
   };
 
   return (
-    <section className="py-24 px-4 bg-surface-card/20 border-b border-surface-border overflow-hidden relative">
+    <section className="py-24 px-4 bg-surface-card/20 overflow-hidden relative">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-3xl h-96 bg-brand/5 blur-[120px] rounded-full pointer-events-none" />
 
       <div className="max-w-5xl mx-auto relative z-10">
